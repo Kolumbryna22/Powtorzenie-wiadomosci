@@ -7,5 +7,5 @@ $ npm install
 
 ### to initialize development mode run:
 ```sh
-$ npm run watch-react
+$ npm start
 ```
