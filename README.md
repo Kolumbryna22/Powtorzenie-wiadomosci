@@ -9,3 +9,8 @@ $ npm install
 ```sh
 $ npm start
 ```
+
+### to initialize production mode run:
+```sh
+$ npm run build-webpack
+```
