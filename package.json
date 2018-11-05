@@ -25,7 +25,7 @@
     "watch-js:autoprefixer": "onchange -d 100 -- autoprefixer-cli -o css/style.prefixed.css css/style.css",
     "watch-js:browsersync": "browser-sync start --server --files \"css/*.css, *.html\"",
     "watch-js:babel": "babel src/script.js --watch --out-file build/script.js",
-    "start": "webpack",
+    "start": "webpack --env development",
     "build-webpack": "webpack --env production"
   },
   "keywords": [],

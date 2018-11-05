@@ -4,11 +4,10 @@ module.exports = (env) => {
     const enviroment = env || 'production';
 
     return {
-        mode: enviroment,
         entry: './src/index.js',
         output: {
             path: path.resolve(__dirname, 'build'),
-            filename: 'app.bundle.js'
+            filename: 'app.' + enviroment + '.bundle.js'
         },
         module: {
             rules: [
@@ -16,6 +15,7 @@ module.exports = (env) => {
                     test: /\.js$/,
                     loader: 'babel-loader',
                     options: {
+                        mode: enviroment,
                         presets: ['env', 'react']
                     }
                 },
