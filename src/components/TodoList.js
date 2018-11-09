@@ -3,19 +3,19 @@ import style from './TodoList.css';
 
 const TodoList = (props) => {
     return (
-        <div>
+        <div className={style.TodoListContainer}>
             {
                 props.list.map((item, i) => {
                     return (
-                        <div id={item.id} key={i}>
+                        <div id={item.id} key={i} className={style.TodoListItem}>
                             <p>{item.text}</p>
-                            <button onClick={props.remove(item.id)}>Delete</button>
+                            <button onClick={() => props.remove(item.id)}>Delete</button>
                         </div>
                     );
                 })
             }
         </div>
     );
-}
+};
 
 export default TodoList;

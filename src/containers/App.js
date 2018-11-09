@@ -20,6 +20,8 @@ class App extends React.Component {
                     text: 'feed my cat'
                 }]
         };
+        this.removeTodo = this.removeTodo.bind(this);
+        this.addTodo = this.addTodo.bind(this);
     }
 
     addTodo(val) {
@@ -42,12 +44,10 @@ class App extends React.Component {
         return (
             <div>
                 <Title />
-                <div className={style.TodoApp}>
-                    <TodoList
-                        list={this.state.data}
-                        remove={this.removeTodo}
-                    />
-                </div>
+                <TodoList
+                    list={this.state.data}
+                    remove={this.removeTodo}
+                />
             </div>
         );
     }

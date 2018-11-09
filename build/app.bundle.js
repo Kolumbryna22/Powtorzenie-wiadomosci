@@ -9472,6 +9472,8 @@ var App = function (_React$Component) {
                 text: 'feed my cat'
             }]
         };
+        _this.removeTodo = _this.removeTodo.bind(_this);
+        _this.addTodo = _this.addTodo.bind(_this);
         return _this;
     }
 
@@ -9502,14 +9504,10 @@ var App = function (_React$Component) {
                 'div',
                 null,
                 _react2.default.createElement(_Title2.default, null),
-                _react2.default.createElement(
-                    'div',
-                    { className: _App2.default.TodoApp },
-                    _react2.default.createElement(_TodoList2.default, {
-                        list: this.state.data,
-                        remove: this.removeTodo
-                    })
-                )
+                _react2.default.createElement(_TodoList2.default, {
+                    list: this.state.data,
+                    remove: this.removeTodo
+                })
             );
         }
     }]);
@@ -9578,7 +9576,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "._1yWMblMhcoxIcFRQVWQUoB {\r\n    background-color: #F5F5F5;\r\n    color: #222;\r\n    display: flex;\r\n    flex-direction: column;\r\n    flex-wrap: nowrap;\r\n    justify-content: center;\r\n    align-items: center;\r\n    align-content: center;\r\n    width: 100vw;\r\n    height: 100vh;\r\n}\r\n", ""]);
+exports.push([module.i, "._1yWMblMhcoxIcFRQVWQUoB {\r\n    background-color: #F5F5F5;\r\n    color: #222;\r\n    width: 100vw;\r\n    height: 100vh;\r\n}\r\n", ""]);
 
 // exports
 exports.locals = {
@@ -9801,11 +9799,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var TodoList = function TodoList(props) {
     return _react2.default.createElement(
         'div',
-        null,
+        { className: _TodoList2.default.TodoListContainer },
         props.list.map(function (item, i) {
             return _react2.default.createElement(
                 'div',
-                { id: item.id, key: i },
+                { id: item.id, key: i, className: _TodoList2.default.TodoListItem },
                 _react2.default.createElement(
                     'p',
                     null,
@@ -9813,7 +9811,9 @@ var TodoList = function TodoList(props) {
                 ),
                 _react2.default.createElement(
                     'button',
-                    { onClick: props.remove(item.id) },
+                    { onClick: function onClick() {
+                            return props.remove(item.id);
+                        } },
                     'Delete'
                 )
             );
@@ -9882,10 +9882,13 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "._1WNuBlW4Q6weUqcJ4PYCEM {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    padding: 10px;\r\n}\r\n\r\n._1NtXUWoKtjtQV2KW_NUo6U {\r\n    padding: 10px;\r\n    text-align: center;\r\n    margin: 10px;\r\n    padding: 10px;\r\n}\r\n\r\n._1NtXUWoKtjtQV2KW_NUo6U,\r\n._1NtXUWoKtjtQV2KW_NUo6U button {\r\n    border: 1px solid lightskyblue;\r\n    border-radius: 3px;\r\n    background-color: white;\r\n}\r\n\r\n._1NtXUWoKtjtQV2KW_NUo6U p {\r\n    margin-top: 0;\r\n}\r\n\r\n._1NtXUWoKtjtQV2KW_NUo6U button {\r\n    cursor: pointer;\r\n}\r\n\r\n._1NtXUWoKtjtQV2KW_NUo6U button:hover {\r\n    background-color: lightskyblue;\r\n    color: white;\r\n}\r\n", ""]);
 
 // exports
-
+exports.locals = {
+	"TodoListContainer": "_1WNuBlW4Q6weUqcJ4PYCEM",
+	"TodoListItem": "_1NtXUWoKtjtQV2KW_NUo6U"
+};
 
 /***/ })
 /******/ ]);
