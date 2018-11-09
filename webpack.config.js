@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
     const enviroment = env || 'production';
+    const reactHotLoader = env !== 'production' ? ["react-hot-loader/babel"] : [];
 
     return {
         entry: './src/index.js',
@@ -22,7 +23,8 @@ module.exports = (env) => {
                     loader: 'babel-loader',
                     options: {
                         mode: enviroment,
-                        presets: ['env', 'react']
+                        presets: ['env', 'react'],
+                        plugins: reactHotLoader
                     }
                 },
                 {

@@ -25,7 +25,7 @@
     "watch-js:autoprefixer": "onchange -d 100 -- autoprefixer-cli -o css/style.prefixed.css css/style.css",
     "watch-js:browsersync": "browser-sync start --server --files \"css/*.css, *.html\"",
     "watch-js:babel": "babel src/script.js --watch --out-file build/script.js",
-    "start": "webpack --env development",
+    "start": "webpack-dev-server --hot --env development",
     "build-webpack": "webpack --env production"
   },
   "keywords": [],
@@ -47,9 +47,11 @@
     "onchange": "^4.1.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "react-hot-loader": "^4.3.12",
     "style-loader": "^0.23.1",
     "webpack": "^3.12.0",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "2.11.3"
   },
   "dependencies": {
     "http-server": "^0.11.1",
